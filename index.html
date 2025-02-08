@@ -135,6 +135,33 @@
     .about-content {
       flex: 1;
     }    
+    /* project card layout */
+    .project-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+    /* photo needs to be on the left */
+    .project-photo {
+      flex: 0 0 200px; 
+    }
+  .project-photo img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    /* project text */
+    .project-content {
+      flex: 1; 
+    }
     /* cards */
     .card {
       background: #f9f9f9;
@@ -227,30 +254,36 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects">
     <h2>Projects</h2>
 
-    <!-- Solar Car Proect -->
-    <div class="card">
-      <img src="images/solarCarPhoto.png" alt="Jason in Solar Car" style="width:100%; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-      <h3>Solar Car Design Team</h3>
-      <p>
-        I am a proud member of the Solar Car Design Team at Virginia Tech. As part of the Telemetry Team, 
-        I work on improving user interfaces for the driver and pit crew, collaborating with the data collection team, 
-        and supporting the integration of electrical and mechanical components to create a fully functional solar-powered car.
-      </p>
+    <!-- Solar Car Project -->
+    <div class="card project-card">
+      <div class="project-photo">
+        <img src="images/solarCarPhoto.png" alt="Solar Car Project">
+      </div>
+      <div class="project-content">
+        <h3>Solar Car Design Team</h3>
+        <p>
+          I am a proud member of the Solar Car Design Team at Virginia Tech. As part of the Telemetry Team, 
+          I work on improving user interfaces for the driver and pit crew, collaborating with the data collection team, 
+          and supporting the integration of electrical and mechanical components to create a fully functional solar-powered car.
+        </p>
+      </div>
     </div>
 
-    <!-- Sudoku Solver Project -->
-    <div class="card">
+  <!-- Sudoku Solver Project -->
+  <div class="card project-card">
+    <div class="project-content">
       <h3>Sudoku Solver (Work in Progress)</h3>
       <p>
         Currently collaborating with two teammates to develop an AI-driven Sudoku Solver. The project is in its early stages, 
         focusing on designing an algorithm to solve puzzles of varying complexity. The solution will involve Python and specific libraries for AI logic.
       </p>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Contact Section -->
   <section id="contact">
