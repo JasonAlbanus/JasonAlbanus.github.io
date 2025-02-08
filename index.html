@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jason Albanus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* general styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Noto Serif', serif;
+      /* smooth scrolling */
+      scroll-behavior: smooth;
+      color: #333;
+    }
+    /* navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      z-index: 100;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+    }
+    .navbar a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    /* section layout */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    /* section titles */
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: maroon;
+      margin: 10px auto;
+    }
+
+    /* education Section */
+    #education .card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+
+    #education .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    #education .card p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    #education .card span {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    /* projects section */
+    #projects .card {
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 20px auto;
+      text-align: left;
+    }
+
+    #projects .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    #projects .card p {
+      margin: 5px 0;
+      font-size: 1rem;
+    }
+
+    #projects .card a {
+      color: maroon;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #projects .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* contact section */
+    #contact ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #contact ul li {
+      margin: 10px 0;
+    }
+
+    #contact ul li a {
+      color: maroon;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #contact ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#intro">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Education Section -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>Virginia Tech</h3>
+      <span>B.S. in Machine Learning, Expected Graduation 2026</span>
+      <p>Working towards a degree from the Electrical and Computer Engineering department at Virginia tech.</p>
+      <p>Taking coursework like Artificial Intelligence and Engineering Applications and Machine Learning.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Sudoku Solver</h3>
+      <p>
+        Working alongside others to create a custom AI sudoku solver. Currently in early stages of development.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <ul>
+      <li>Email: <a href="mailto:jay.albanus@gmail.com">jay.albanus@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/jason-albanus-69a2a5337/" target="_blank">LinkedIn Profile</a></li>
+      <li>GitHub: <a href="https://github.com/JasonAlbanus" target="_blank">GitHub Profile</a></li>
+    </ul>
+  </section>
+</body>
+</html>
