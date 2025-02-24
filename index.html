@@ -120,18 +120,20 @@
       text-align: left;
     }
     .about-photo {
-      flex: 0 0 auto;
+      width: 150px;
+      height: 150px;
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-shrink: 0;
     }
     .about-photo img {
-      width: 150px;
-      height: auto;
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
+      object-fit: cover;
       border: 4px solid #861F41; /* vt maroon boarder */
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      object-fit: cover;
     }
     .about-content {
       flex: 1;
