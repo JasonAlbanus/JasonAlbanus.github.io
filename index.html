@@ -23,8 +23,8 @@
       background: #861F41; /* vt maroon */
       padding: 10px 20px;
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
       z-index: 100;
     }
     .navbar a {
@@ -34,6 +34,8 @@
       padding: 8px 15px;
       border-radius: 5px;
       transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
     }
     .navbar a:hover {
       background: rgba(255, 255, 255, 0.2);
@@ -310,7 +312,7 @@
   <!-- Navbar -->
   <nav class="navbar" id="navbar">
     <div class="brand">
-      <a href="#intro">Jason Albanus</a>
+      <a href="#intro">Home</a>
     </div>
     <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
       <div class="hamburger"></div>
