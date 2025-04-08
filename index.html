@@ -38,6 +38,7 @@
     .navbar a:hover {
       background: rgba(255, 255, 255, 0.2);
     }
+    
     /* intro area */
     .intro {
       height: 100vh;
@@ -156,7 +157,7 @@
     .project-photo {
       flex: 0 0 200px; 
     }
-  .project-photo img {
+    .project-photo img {
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -207,19 +208,92 @@
     #contact ul li a:hover {
       text-decoration: underline;
     }
+
+    
+    /* Adding mobile hamburger nav bar */
+     .nav-menu {
+      display: flex;
+      gap: 20px;
+    }
+    /* Hide the hamburger button on large screens */
+    .menu-toggle {
+      display: none;
+      background: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .menu-toggle:focus {
+      outline: none;
+    }
+    .hamburger {
+      position: relative;
+      width: 20px;
+      height: 2px;
+      background: #861F41;
+      transition: background 0.3s ease;
+    }
+    .hamburger::before,
+    .hamburger::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: #861F41;
+      transition: transform 0.3s ease;
+    }
+    .hamburger::before {
+      top: -6px;
+    }
+    .hamburger::after {
+      top: 6px;
+    } 
+    
     /* For dealing with mobile devices */
     @media (max-width: 768px) {
-      .navbar {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px;
+      /* Navbar: Hide standard nav-menu and show hamburger */
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: #861F41;
+        position: absolute;
+        top: 60px;  /* Adjust based on navbar height */
+        right: 20px;
+        width: 200px;
+        border-radius: 10px;
+        padding: 10px 0;
       }
+      .nav-menu a {
+        padding: 10px 15px;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      /* When menu is toggled open */
+      .navbar.open .nav-menu {
+        display: flex;
+      }
+      /* Animate hamburger to "X" when open */
+      .navbar.open .hamburger {
+        background: transparent;
+      }
+      .navbar.open .hamburger::before {
+        transform: rotate(45deg) translate(3px, 3px);
+      }
+      .navbar.open .hamburger::after {
+        transform: rotate(-45deg) translate(3px, -3px);
+      }
+      /* Cards adjustment */
       .about-card, .project-card {
         flex-direction: column;
         align-items: center;
         text-align: center;
       }
-            .about-photo {
+      .about-photo {
         margin-bottom: 15px;
       }
       .project-photo {
@@ -234,12 +308,19 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar">
-    <a href="#intro">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <nav class="navbar" id="navbar">
+    <div class="brand">
+      <a href="#intro">Jason Albanus</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+      <div class="hamburger"></div>
+    </button>
+    <div class="nav-menu">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <!-- Intro Section -->
@@ -313,7 +394,7 @@
   <!--  Hand Writting Classifier -->
   <div class="card project-card">
     <div class="project-content">
-      <h3>Hand Writting Classifier (Work in Progress)</h3>
+      <h3>Hand Writing Classifier (Work in Progress)</h3>
       <p>
         Collaborating with two teammates to develop a Convolutional Neural Network (CNN) that accurately
         converts scanned handwritten documents into digital text. I will be working as the project's Lead CNN Architect. 
@@ -332,5 +413,14 @@
       <li><a href="https://github.com/JasonAlbanus" target="_blank">GitHub</a></li>
     </ul>
   </section>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
+
+    menuToggle.addEventListener("click", function () {
+      navbar.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
