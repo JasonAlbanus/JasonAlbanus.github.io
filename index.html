@@ -261,7 +261,7 @@
         flex-direction: column;
         background: #861F41;
         position: absolute;
-        top: 60px;  /* Adjust based on navbar height */
+        top: 60px;
         right: 20px;
         width: 200px;
         border-radius: 10px;
@@ -277,15 +277,15 @@
       .navbar.open .nav-menu {
         display: flex;
       }
-      /* Animate hamburger to "X" when open */
+      /* change hamburger when open */
       .navbar.open .hamburger {
-        background: transparent;
+        background: #861F41;
       }
       .navbar.open .hamburger::before {
-        transform: rotate(45deg) translate(3px, 3px);
+        transform: none;
       }
       .navbar.open .hamburger::after {
-        transform: rotate(-45deg) translate(3px, -3px);
+        transform: none;
       }
       /* Cards adjustment */
       .about-card, .project-card {
